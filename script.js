@@ -53,7 +53,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, cardObserverOptions);
 
-    document.querySelectorAll('.info-card, .phase-row, .b2g-card, .stat-box, .action-item').forEach(el => {
+    document.querySelectorAll('.info-card, .phase-row, .b2g-card, .preview-window, .action-item').forEach(el => {
         cardObserver.observe(el);
     });
+
+    // CAROUSEL LOGIC
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const indicatorDots = document.querySelectorAll('.indicator-dot');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    let currentSlide = 0;
+
+    function updateCarousel(index) {
+        carouselItems.forEach(item => item.classList.remove('active'));
+        indicatorDots.forEach(dot => dot.classList.remove('active'));
+        
+        carouselItems[index].classList.add('active');
+        indicatorDots[index].classList.add('active');
+        currentSlide = index;
+    }
+
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            let index = (currentSlide - 1 + carouselItems.length) % carouselItems.length;
+            updateCarousel(index);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            let index = (currentSlide + 1) % carouselItems.length;
+            updateCarousel(index);
+        });
+
+        indicatorDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                updateCarousel(index);
+            });
+        });
+    }
 });
