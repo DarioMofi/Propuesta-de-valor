@@ -1,0 +1,662 @@
+/* ═══════════════════════════════════════════════
+   CLEAN RESET: SITU Web
+   ─────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Charis+SIL:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --clr-bg: #000000;
+    --clr-primary: #4D6080;
+    --clr-text: #E9D9CA;
+    --clr-text-muted: #ffffff;
+    --clr-card-1: #C6F9FD; 
+    --clr-card-2: #5e0741; 
+    --clr-card-3: #5420C2; 
+    --clr-card-4: #085c40; 
+    --font-title: 'Playfair Display', serif;
+    --font-heading: 'Charis SIL', serif;
+    --font-body: 'Inter', sans-serif;
+    --clr-accent: #F1C40F; /* Gold color */
+    --header-height: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--clr-bg);
+    color: var(--clr-text);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+/* Header */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: flex-end; /* Moved to the right */
+    padding: 0 5%; /* Side padding */
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 2rem;
+}
+
+.btn-nav {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--clr-text);
+    padding: 10px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: var(--font-body) !important;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.btn-nav:hover {
+    border-color: var(--clr-accent);
+    color: var(--clr-accent);
+    background: rgba(241, 196, 15, 0.08);
+    transform: translateY(-2px);
+}
+
+/* Slides */
+.slide-container {
+    padding-top: var(--header-height);
+}
+
+.slide {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 10%;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#slide-1 {
+    min-height: 100vh; /* Restoration as a full cover */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto 8rem;
+    border-bottom: none;
+}
+
+#slide-1 .slide-title {
+    max-width: 1200px; /* Constraining to keep it "en fila" but not stretched to the edges */
+    font-size: clamp(2.5rem, 6vw, 4.8rem); /* Slightly smaller to fit lines better */
+    line-height: 1.1;
+    letter-spacing: -0.03em; /* Premium kerning */
+}
+
+#slide-1 .slide-content {
+    color: var(--clr-primary);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.slide-title {
+    font-family: var(--font-title);
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    margin-bottom: 1rem;
+}
+
+.slide-content {
+    font-size: 1.2rem;
+    color: var(--clr-text-muted);
+    max-width: 800px;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--clr-primary);
+}
+
+.modal-list {
+    list-style: none;
+    text-align: left;
+}
+
+.modal-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.modal-close {
+    margin-top: 2rem;
+    background: var(--clr-primary);
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Slide 2: Info Cards Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.info-card {
+    position: relative; /* Added for tag placement */
+    background: #0A0F1E;
+    border-top: 4px solid var(--clr-primary);
+    padding: 2.5rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.info-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.info-card i {
+    font-size: 2.5rem;
+    color: var(--clr-primary);
+}
+
+.info-card h3 {
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    line-height: 1.2;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.info-card p {
+    font-size: 1rem;
+    color: var(--clr-text-muted);
+    line-height: 1.6;
+}
+
+/* Staggered entry delays */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.3s; }
+.delay-3 { transition-delay: 0.5s; }
+.delay-4 { transition-delay: 0.7s; }
+
+/* Slide-specific card colors */
+.color-1 { border-color: var(--clr-card-1) !important; }
+.color-1 i { color: var(--clr-card-1) !important; }
+
+.color-2 { border-color: var(--clr-card-2) !important; }
+.color-2 i { color: var(--clr-card-2) !important; }
+
+.color-3 { border-color: var(--clr-card-3) !important; }
+.color-3 i { color: var(--clr-card-3) !important; }
+
+.color-4 { border-color: var(--clr-card-4) !important; }
+.color-4 i { color: var(--clr-card-4) !important; }
+
+/* Grid for 2x2 layout (Slide 3) */
+.grid-2x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 900px) {
+    .grid-2x2 { grid-template-columns: 1fr; }
+}
+
+.grid-3x2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 1100px) {
+    .grid-3x2 { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+    .grid-3x2 { grid-template-columns: 1fr; }
+}
+
+.card-tag {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    padding: 4px 10px;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+}
+
+/* Variant for Slide 3 cards (border left) */
+.info-card.border-left {
+    border-top: none;
+    border-left: 6px solid var(--clr-primary);
+}
+
+.slide-badge {
+    color: var(--clr-primary);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+/* Slide 4: Methodology Phases */
+.methodology-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.phase-row {
+    display: flex;
+    gap: 1.5rem;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.phase-row.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.phase-number {
+    flex: 0 0 100px;
+    height: 100px;
+    border: 2px solid var(--clr-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--clr-primary);
+    border-radius: 4px;
+}
+
+.phase-content {
+    flex: 1;
+    background: #0A0F1E;
+    padding: 1.5rem 2rem;
+    border-radius: 4px;
+    border-left: 4px solid var(--clr-primary);
+}
+
+.phase-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.phase-content p {
+    font-size: 0.95rem;
+    color: var(--clr-text-muted);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.tool-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.tool-tag {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--clr-text-muted);
+}
+
+.tool-tag i {
+    font-size: 0.9rem;
+}
+
+/* Phase specifics */
+.phase-row.color-2 .phase-number,
+.phase-row.color-2 .phase-content {
+    border-color: var(--clr-card-2);
+    color: var(--clr-card-2);
+}
+.phase-row.color-2 .tool-tag { border-color: rgba(0, 168, 232, 0.3); }
+
+.phase-row.color-3 .phase-number,
+.phase-row.color-3 .phase-content {
+    border-color: var(--clr-card-3);
+    color: var(--clr-card-3);
+}
+.phase-row.color-3 .tool-tag { border-color: rgba(39, 174, 96, 0.3); }
+
+/* Ensure text inside content stays white but headers color-coded */
+.phase-content h3 { color: #FFFFFF !important; }
+
+/* Slide 5: B2G Cards */
+.b2g-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+@media (max-width: 1000px) {
+    .b2g-grid { grid-template-columns: 1fr; }
+}
+
+.b2g-card {
+    background: #0A0F1E;
+    border: 1px solid var(--clr-primary);
+    padding: 2.5rem 2rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.b2g-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.indicator-circle {
+    width: 45px;
+    height: 45px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.card-top-row i {
+    font-size: 3rem;
+    opacity: 0.8;
+}
+
+.b2g-card h3 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    color: #FFFFFF;
+}
+
+.b2g-card p {
+    font-size: 0.95rem;
+    color: var(--clr-text-muted);
+    line-height: 1.6;
+}
+
+.slide-footer {
+    margin-top: 3rem;
+    text-align: center;
+    font-style: italic;
+    color: var(--clr-text-muted);
+    font-size: 0.9rem;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+}
+
+/* Slide 9: Tech Stack List */
+.tech-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.tech-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    color: var(--clr-text-muted);
+}
+
+.tech-list li i {
+    width: 20px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Slide 10: Final Slide Layout */
+.split-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+    width: 100%;
+    align-items: start;
+}
+
+@media (max-width: 1000px) {
+    .split-container { grid-template-columns: 1fr; }
+}
+
+.title-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.title-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60%;
+    height: 4px;
+    background: var(--clr-primary);
+}
+
+.action-list {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.action-item {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 5px solid var(--clr-primary);
+    padding: 1.2rem 2rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.action-item.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.action-item:hover {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateX(10px);
+}
+
+.action-item i {
+    color: var(--clr-primary);
+}
+
+.sidebar-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #FFFFFF;
+}
+
+.stat-box.compact {
+    padding: 1.2rem 1.5rem;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.stat-box.compact .stat-number {
+    font-size: 2.2rem;
+    min-width: 60px;
+}
+
+.stat-box.compact .stat-text {
+    font-size: 1rem;
+}
+
+/* Slide 8: Value Proposition */
+.value-proposition-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+@media (max-width: 1000px) {
+    .value-proposition-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+.value-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.value-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.stat-box {
+    background: #0A0F1E;
+    border: 1px solid var(--clr-primary);
+    padding: 1.5rem 2rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stat-box.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--clr-primary);
+    min-width: 100px;
+    font-family: var(--font-heading);
+}
+
+.stat-text {
+    font-size: 1.1rem;
+    color: var(--clr-text-muted);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* Color variations for stat boxes */
+.stat-box.color-2 { border-color: var(--clr-card-2); }
+.stat-box.color-2 .stat-number { color: var(--clr-card-2); }
+
+.stat-box.color-3 { border-color: var(--clr-card-3); }
+.stat-box.color-3 .stat-number { color: var(--clr-card-3); }

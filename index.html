@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación ejecutiva</title>
+    <link rel="icon" href="assets/Icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="nav-buttons">
+            <a href="#slide-3" class="btn-nav">Propuestas</a>
+            <button id="btn-integrantes" class="btn-nav">Integrantes</button>
+            <a href="PDF.pdf" download class="btn-nav">Descarga PDF</a>
+        </nav>
+    </header>
+
+    <!-- Slides Container -->
+    <main class="slide-container">
+        
+        <!-- Diapositiva 1 -->
+        <div id="slide-1" class="slide">
+            <h1 class="slide-title">Plataforma Web de datos Espaciales Abiertos</h1>
+            <p class="slide-content">Scale, let’s scale</p>
+        </div>
+
+        <!-- Diapositiva 2 -->
+        <div id="slide-2" class="slide">
+            <div class="slide-badge">El Problema</div>
+            <h2 class="slide-title">Desigualdad territorial invisible</h2>
+            <div class="card-grid">
+                <div class="info-card color-1 delay-1">
+                    <i class="fa-solid fa-building"></i>
+                    <h3>Fragmentación<br>Jurisdiccional</h3>
+                    <p>La gestión municipal desarticulada impide capturar la magnitud real de la desigualdad en sus diferentes escalas.</p>
+                </div>
+                <div class="info-card color-1 delay-2">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>Datos Dispersos<br>Sin Integración</h3>
+                    <p>Se cuenta con información pública con diferentes grados de agregación georreferenciada. Sin un sistema unificado, la toma de decisiones es ciega.</p>
+                </div>
+                <div class="info-card color-1 delay-3">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <h3>Presupuesto sin<br>Impacto Medible</h3>
+                    <p>Municipios con mayores rezagos no cuentan con las mismas capacidades institucionales, derivando en esquemas de coordinación ineficientes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 3 -->
+        <div id="slide-3" class="slide">
+            <div class="slide-badge">La Solución</div>
+            <h2 class="slide-title">Una plataforma que transforma datos en decisiones</h2>
+            <div class="grid-2x2">
+                <div class="info-card border-left color-4 delay-1">
+                    <i class="fa-solid fa-map"></i>
+                    <h3>Cartografía Digital<br>Interactiva</h3>
+                    <p>Mapas temáticos multicapa con resolución a nivel de manzana. Cobertura de servicios urbanos en tiempo real.</p>
+                </div>
+                <div class="info-card border-left color-2 delay-2">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Tableros de<br>Indicadores</h3>
+                    <p>Dashboards dinámicos con KPIs territoriales, autocorrelación espacial y modelos de regresión espacialmente ponderada (GWR).</p>
+                </div>
+                <div class="info-card border-left color-2 delay-3">
+                    <i class="fa-solid fa-globe"></i>
+                    <h3>Datos Abiertos y<br>Replicables</h3>
+                    <p>Modelos analíticos con licencia abierta publicados en GitHub Pages. Estándares de transparencia activa.</p>
+                </div>
+                <div class="info-card border-left color-4 delay-4">
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    <h3>Geointeligencia<br>Multiescalar</h3>
+                    <p>Análisis de conglomerados (K-Means), indicadores LISA, GWR y ruteo espacial para identificación de puntos críticos.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 4 -->
+        <div id="slide-4" class="slide">
+            <div class="slide-badge">Metodología</div>
+            <h2 class="slide-title">Estrategia mixta secuencial en 3 fases progresivas</h2>
+            
+            <div class="methodology-container">
+                <!-- Fase 01 -->
+                <div class="phase-row color-3 delay-1">
+                    <div class="phase-number">01</div>
+                    <div class="phase-content">
+                        <h3>Sistema de Información Geoespacial</h3>
+                        <p>Acopio e integración de fuentes estadísticas y cartográficas (INEGI, CONAGUA, CFE). Construcción de base de datos en PostgreSQL/PostGIS y GeoPandas.</p>
+                        <div class="tool-group">
+                            <div class="tool-tag"><i class="fa-solid fa-server"></i> PostgreSQL/PostGIS</div>
+                            <div class="tool-tag"><i class="fa-solid fa-table-list"></i> GeoPandas</div>
+                            <div class="tool-tag"><i class="fa-solid fa-file-csv"></i> INEGI - CONAGUA - CFE</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fase 02 -->
+                <div class="phase-row color-4 delay-2">
+                    <div class="phase-number">02</div>
+                    <div class="phase-content">
+                        <h3>Análisis Espacial Multiescalar</h3>
+                        <p>Geointeligencia con K-Means, LISA, modelos GWR y ruteo TSP para identificación de puntos críticos de rezago territorial.</p>
+                        <div class="tool-group">
+                            <div class="tool-tag"><i class="fa-solid fa-brain"></i> K-Means Espacial</div>
+                            <div class="tool-tag"><i class="fa-solid fa-chart-line"></i> LISA - GWR</div>
+                            <div class="tool-tag"><i class="fa-solid fa-route"></i> Ruteo TSP</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fase 03 -->
+                <div class="phase-row color-2 delay-3">
+                    <div class="phase-number">03</div>
+                    <div class="phase-content">
+                        <h3>Validación</h3>
+                        <p>Validación de modelos con evidencia cualitativa institucional y visualizaciones interactivas accesibles al ciudadano y tomadores de decisiones.</p>
+                        <div class="tool-group">
+                            <div class="tool-tag"><i class="fa-solid fa-comments"></i> Datos Cualitativos</div>
+                            <div class="tool-tag"><i class="fa-brands fa-github"></i> GitHub Pages</div>
+                            <div class="tool-tag"><i class="fa-solid fa-eye"></i> Visualizaciones Open Source</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 5 -->
+        <div id="slide-5" class="slide">
+            <div class="slide-badge" style="color: var(--clr-card-3);">Modelos de Política</div>
+            <h2 class="slide-title">Mercado B2G</h2>
+            
+            <div class="b2g-grid">
+                <!-- Card A -->
+                <div class="b2g-card color-3 delay-1">
+                    <div class="card-top-row">
+                        <div class="indicator-circle">A</div>
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3>Orientar la Inversión Pública</h3>
+                    <p>Identifica municipios con mayores rezagos en cobertura de servicios urbanos. Transforma el presupuesto en impacto territorial medible.</p>
+                </div>
+
+                <!-- Card B -->
+                <div class="b2g-card color-1 delay-2">
+                    <div class="card-top-row">
+                        <div class="indicator-circle">B</div>
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3>Fortalecer Capacidades Municipales</h3>
+                    <p>Evalúa las capacidades institucionales de cada municipio para diseñar programas de fortalecimiento técnico diferenciados según el rezago detectado.</p>
+                </div>
+
+                <!-- Card C -->
+                <div class="b2g-card color-3 delay-3">
+                    <div class="card-top-row">
+                        <div class="indicator-circle">C</div>
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3>Coordinación Metropolitana</h3>
+                    <p>Diseña esquemas de coordinación metropolitana para superar la fragmentación jurisdiccional que agrava las desigualdades existentes.</p>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                La interdependencia técnica y sistémica del análisis multiservicio captura la magnitud real de la desigualdad territorial
+            </div>
+        </div>
+
+        <!-- Diapositiva 6 -->
+        <div id="slide-6" class="slide">
+            <h2 class="slide-title">Servicios B2G</h2>
+            <div class="grid-3x2">
+                <!-- Card 1 -->
+                <div class="info-card color-4 delay-1">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <h3>Diagnóstico Territorial</h3>
+                    <p>Vulnerabilidad, movilidad, cuidados y riesgo hidrometeorológico. Base para PMDU y ordenamiento territorial.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="info-card color-2 delay-2">
+                    <i class="fa-solid fa-lock"></i>
+                    <h3>Transparencia Activa</h3>
+                    <p>Cumple Ley General de Transparencia. Publica indicadores territoriales en tiempo real accesibles al ciudadano.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="info-card color-4 delay-3">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <h3>Localización Óptima</h3>
+                    <p>Identifica dónde abrir centros de cuidado, clínicas o escuelas maximizando alcance a población vulnerable.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="info-card color-3 delay-1">
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                    <h3>Recaudación Predial</h3>
+                    <p>Identifica predios sub-valuados o no registrados. Incrementa recaudación sin aumentar tasas impositivas.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="info-card color-4 delay-2">
+                    <i class="fa-solid fa-globe"></i>
+                    <h3>ODS y Financiamiento</h3>
+                    <p>Permite medir avances en ODS con datos verificables. Cumple estándares BID y Banco Mundial.</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="info-card color-1 delay-3">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <h3>Gasto Público Eficiente</h3>
+                    <p>Convierte presupuesto en impacto medible. Rendición de cuentas con georeferenciación verificable.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 7 -->
+        <div id="slide-7" class="slide">
+            <div class="slide-badge" style="color: var(--clr-card-1);">Empresa: inteligencia territorial como ventaja competitiva</div>
+            <h2 class="slide-title">Mercado B2B</h2>
+            <div class="grid-3x2">
+                <!-- Card 1 -->
+                <div class="info-card color-3 delay-1">
+                    <div class="card-tag">SaaS</div>
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <h3>Site Selection<br>SaaS</h3>
+                    <p>Predice el éxito comercial cruzando poder adquisitivo, flujos peatonales, densidad de competencia y accesibilidad.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="info-card color-2 delay-2">
+                    <div class="card-tag">SaaS</div>
+                    <i class="fa-solid fa-route"></i>
+                    <h3>Logística<br>Urbana</h3>
+                    <p>Reduce costos y tiempos de entrega mediante análisis de transporte, pendientes y densidad de tráfico micro-local.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="info-card color-1 delay-3">
+                    <div class="card-tag">SaaS</div>
+                    <i class="fa-solid fa-building-circle-check"></i>
+                    <h3>Inversión<br>Inmobiliaria</h3>
+                    <p>Identifica zonas con potencial de plusvalía analizando cambios de uso de suelo y proyectos aprobados.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="info-card color-2 delay-1">
+                    <div class="card-tag">RaaS</div>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Seguros<br>RaaS</h3>
+                    <p>Micro-segmentación de primas por vulnerabilidad hídrica o geológica a nivel de predio individual.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="info-card color-4 delay-2">
+                    <div class="card-tag">SaaS</div>
+                    <i class="fa-solid fa-leaf"></i>
+                    <h3>Agro<br>Inteligencia</h3>
+                    <p>Maximiza rendimiento por hectárea mediante índices satelitales (NDVI), análisis de suelos y meteorología de alta resolución.</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="info-card color-2 delay-3">
+                    <div class="card-tag">SaaS</div>
+                    <i class="fa-solid fa-bolt"></i>
+                    <h3>Infraestructura<br>Energética</h3>
+                    <p>Optimiza el despliegue de redes identificando rutas de menor resistencia social, ambiental y topográfica.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 8 -->
+        <div id="slide-8" class="slide">
+            <div class="slide-badge" style="color: var(--clr-card-2);">Una contribución original al urbanismo computacional</div>
+            <h2 class="slide-title">Propuesta de Valor</h2>
+            <div class="value-proposition-grid">
+                <div class="value-left">
+                    <div class="info-card border-left color-4 delay-1">
+                        <h3>Componente Espacial Central</h3>
+                        <p>Integra la cartografía digital como variable analítica central. El análisis multiservicio captura la magnitud real de la desigualdad.</p>
+                    </div>
+                    <div class="info-card border-left color-3 delay-2">
+                        <h3>Modelos Replicables y Abiertos</h3>
+                        <p>Modelos de acceso público para formular políticas de infraestructura equitativas y territorialmente diferenciadas.</p>
+                    </div>
+                    <div class="info-card border-left color-2 delay-3">
+                        <h3>Cumplimiento Multilateral</h3>
+                        <p>Cumple con estándares de transparencia y rendición de cuentas que exigen el BID y el Banco Mundial.</p>
+                    </div>
+                </div>
+                <div class="value-right">
+                    <div class="stat-box color-1 delay-1">
+                        <div class="stat-number">6+</div>
+                        <div class="stat-text">Fuentes de datos<br>integradas</div>
+                    </div>
+                    <div class="stat-box color-1 delay-2">
+                        <div class="stat-number">3</div>
+                        <div class="stat-text">Niveles de<br>política pública</div>
+                    </div>
+                    <div class="stat-box color-1 delay-3">
+                        <div class="stat-number">B2G<br>+B2B</div>
+                        <div class="stat-text">Segmentos<br>de mercado</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 9 -->
+        <div id="slide-9" class="slide">
+            <div class="slide-badge" style="color: var(--clr-card-3);">Stack Tecnológico</div>
+            <h2 class="slide-title">Infraestructura robusta de análisis geoespacial</h2>
+            <div class="grid-2x2">
+                <!-- Card 1 -->
+                <div class="info-card color-3 delay-1">
+                    <h3 style="color: var(--clr-card-1);">Base de Datos</h3>
+                    <ul class="tech-list">
+                        <li><i class="fa-solid fa-server"></i> PostgreSQL / PostGIS</li>
+                        <li><i class="fa-solid fa-layer-group"></i> Datos vectoriales y raster</li>
+                        <li><i class="fa-solid fa-database"></i> Consultas espaciales SQL</li>
+                    </ul>
+                </div>
+                <!-- Card 2 -->
+                <div class="info-card color-3 delay-2">
+                    <h3 style="color: var(--clr-card-1);">Análisis Espacial</h3>
+                    <ul class="tech-list">
+                        <li><i class="fa-brands fa-python"></i> Python · GeoPandas</li>
+                        <li><i class="fa-solid fa-brain"></i> K-Means · GWR · LISA</li>
+                        <li><i class="fa-solid fa-route"></i> TSP · Ruteo espacial</li>
+                    </ul>
+                </div>
+                <!-- Card 3 -->
+                <div class="info-card color-3 delay-3">
+                    <h3 style="color: var(--clr-card-1);">Fuentes de Datos</h3>
+                    <ul class="tech-list">
+                        <li><i class="fa-solid fa-chart-simple"></i> INEGI · DENUE · Censo 2020</li>
+                        <li><i class="fa-solid fa-bolt"></i> CONAGUA · CFE · ENE</li>
+                        <li><i class="fa-solid fa-people-group"></i> ENIGH · SIMBAD</li>
+                    </ul>
+                </div>
+                <!-- Card 4 -->
+                <div class="info-card color-3 delay-4">
+                    <h3 style="color: var(--clr-card-1);">Publicación Web</h3>
+                    <ul class="tech-list">
+                        <li><i class="fa-brands fa-github"></i> GitHub Pages</li>
+                        <li><i class="fa-solid fa-map"></i> Mapas interactivos Leaflet/QGIS</li>
+                        <li><i class="fa-solid fa-certificate"></i> Licencia abierta CC-BY 4.0</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 10 -->
+        <div id="slide-10" class="slide">
+            <h2 class="slide-title" style="font-size: 3.5rem;">PRÓXIMOS <span class="title-underline">PASOS</span></h2>
+            
+            <div class="split-container">
+                <div class="split-left">
+                    <p style="font-size: 1.2rem; color: var(--clr-text-muted); line-height: 1.6; max-width: 600px;">
+                        La plataforma está lista para escalar. Buscamos socios estratégicos, instituciones gubernamentales y organizaciones multilaterales para ampliar el impacto territorial.
+                    </p>
+                    
+                    <div class="action-list">
+                        <div class="action-item color-2 delay-1">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Demo del portal interactivo
+                        </div>
+                        <div class="action-item color-2 delay-2">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Piloto municipal personalizado
+                        </div>
+                        <div class="action-item color-3 delay-3">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Propuesta de colaboración B2G/B2B
+                        </div>
+                    </div>
+                </div>
+
+                <div class="split-right">
+                    <h3 class="sidebar-title">Impacto Esperado</h3>
+                    <div class="stat-box compact color-2 delay-1">
+                        <div class="stat-number">6+</div>
+                        <div class="stat-text">Fuentes de<br>datos</div>
+                    </div>
+                    <div class="stat-box compact color-2 delay-2">
+                        <div class="stat-number">3</div>
+                        <div class="stat-text">Niveles de<br>política</div>
+                    </div>
+                    <div class="stat-box compact color-2 delay-3">
+                        <div class="stat-number">ODS</div>
+                        <div class="stat-text">Cumplimiento<br>multilateral</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modal Integrantes -->
+    <div id="modal-integrantes" class="modal-overlay">
+        <div class="modal-content">
+            <h3>Integrantes del Equipo</h3>
+            <ul class="modal-list">
+                <li>Dario Molina Figueroa</li>
+                <li>Manuel Emiliano Moreno Pérez</li>
+                <li>Ismael Kaleet Luna Aguilar</li>
+                <li>[Integrante 4 - Pendiente]</li>
+            </ul>
+            <button id="btn-close-modal" class="modal-close">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
